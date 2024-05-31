@@ -1,8 +1,8 @@
-import Header from './components/header/header'
+import PersonalProfile from "./pages/personalPage"
 
 const App: React.FC = () => {
   return (
-    <Header />
+    <PersonalProfile />
   )
 }
 

@@ -1,6 +1,5 @@
-import React, { useId, useState } from 'react'
+import { useId, useState } from 'react'
 import burgerBarIcon from '../../assets/menu_icon.svg'
-import './headerHooks'
 
 // Sidebar, will aooear when burger bar is clicked
 const SidebarMenu: React.FC = () => {
