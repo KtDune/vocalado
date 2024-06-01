@@ -1,4 +1,4 @@
-import PersonalProfile from "./pages/personalPage"
+import PersonalProfile from "./pages/PersonalProfilePage"
 
 const App: React.FC = () => {
   return (
