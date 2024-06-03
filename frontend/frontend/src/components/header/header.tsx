@@ -4,7 +4,7 @@ import {useSidebar} from '../Sidebar/SidebarHooks'
 
 // Burgerbar icon on the top left corner
 const BurgerBar: React.FC = () => {
-    const toggleSidebarState = useSidebar()
+    const {toggleSidebarState} = useSidebar()
 
     const burgerBarStyle = {
         cursor: 'pointer',

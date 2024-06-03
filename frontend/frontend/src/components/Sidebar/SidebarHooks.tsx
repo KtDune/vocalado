@@ -1,11 +1,12 @@
-import { createContext, useContext } from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
 
 interface SidebarContextType {
-  value: () => void
+  sidebarState: boolean,
+  toggleSidebarState: () => void
 }
 
 //Context Provider for sidebar control
-const SidebarContext = createContext<SidebarContextType["value"] | undefined>(undefined)
+const SidebarContext = createContext<SidebarContextType | undefined>(undefined)
 
 export const useSidebar = () => {
   const context = useContext(SidebarContext)
@@ -15,4 +16,17 @@ export const useSidebar = () => {
   return context
 }
 
-export default SidebarContext
+const SidebarContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
+  const [sidebarState, setSidebarState] = useState(false)
+  const toggleSidebarState = () => {
+    setSidebarState(() => !sidebarState)
+  }
+
+  return (
+    <SidebarContext.Provider value={{sidebarState, toggleSidebarState}}>
+      {children}
+    </SidebarContext.Provider>
+  )
+}
+
+export default SidebarContextProvider
