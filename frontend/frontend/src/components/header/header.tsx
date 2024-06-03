@@ -1,28 +1,11 @@
-import { useId, useState } from 'react'
+import {useId} from 'react'
 import burgerBarIcon from '../../assets/menu_icon.svg'
-
-// Sidebar, will aooear when burger bar is clicked
-const SidebarMenu: React.FC = () => {
-const SidebarStyle = {
-    backgroundColor: '#00688F',
-    width: '20vw',
-    height: '90.9vh',
-}
-
-    return (
-        <div style={SidebarStyle}>
-            <p className='nav-link'>home</p>
-            <p className='nav-link'>upload</p>
-        </div>
-    )
-}
-
-interface BurgerBarProp {
-    toggleState: () => void
-}
+import {useSidebar} from '../Sidebar/SidebarHooks'
 
 // Burgerbar icon on the top left corner
-const BurgerBar: React.FC<BurgerBarProp> = (props) => {
+const BurgerBar: React.FC = () => {
+    const toggleSidebarState = useSidebar()
+
     const burgerBarStyle = {
         cursor: 'pointer',
         margin: '0 1rem 0 1rem'
@@ -31,10 +14,9 @@ const BurgerBar: React.FC<BurgerBarProp> = (props) => {
 
     return (
         <>
-            <a href='#' style={burgerBarStyle} onClick={props.toggleState}>
+            <a href='#' style={burgerBarStyle} onClick={toggleSidebarState}>
                 <img src={burgerBarIcon} className="img-fluid"/>
             </a>
-            {false ? <SidebarMenu /> : null}
         </>
     )
 }
@@ -76,12 +58,6 @@ const ProfileButton: React.FC = () => {
 }
 
 const Header: React.FC = () => {
-
-    const[sidebarState, setSidebarState] = useState(false)
-    const changeSidebarState = () => {
-        setSidebarState(sidebarState => !sidebarState)
-    }
-
     const HeaderStyle = {
         backgroundColor: '#291D36'
     }
@@ -90,14 +66,13 @@ const Header: React.FC = () => {
         <>
             <nav className="navbar navbar-expand-lg" style={HeaderStyle}>
                 <div className="navbar-brand">
-                  <BurgerBar toggleState={changeSidebarState} /> 
+                  <BurgerBar /> 
                   <BrandIcon /> 
                 </div>
                 <ul className='navbar-nav ms-auto'>
                     <ProfileButton />
                 </ul> 
             </nav>
-            {sidebarState ? <SidebarMenu /> : null}
         </>
     )
 }

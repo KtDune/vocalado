@@ -1,42 +1,33 @@
 interface PersonalDetailsProps {
-    content: string
+    content: {
+        src: string,
+    alt: string,
+style: {}}
 }
 
-export const PersonalDetailsImage: React.FC<PersonalDetailsProps> = (props) => {
-const PersonalDetailsImageStyle = {
-    backgroundColor: '#FFFFFF',
-    width: '15rem',
-    height: '15rem'
+interface TextboxProps {
+    content: {
+        className: string,
+        text: string,
+        style: {}
+    }
 }
+
+//Ignore the error on this conponent, the param is passed successfully and has no issue runing o nthe web. Vscode = shyt
+export const PersonalDetailsImage: React.FC<PersonalDetailsProps> = ({content}) => {
+    const {src, alt, style} = content
 
     return (
-        <img src={props.content} alt="cover profile pic" className="img-fliud" style={PersonalDetailsImageStyle}/>
+        <img src={src} alt={alt} className="img-fliud" style={style}/>
     )
 }
 
-export const PersonalDetailsLabel: React.FC<PersonalDetailsProps> = (props) => {
-    const PersonalDetailsLabelStyle = {
-        backgroundColor: '#291D36',
-        color: '#FFFFFF',
-        padding: '0.7rem'
-    }
+export const PersonalDetailsLabel: React.FC<TextboxProps> = ({content}) => {
+    const {className, text, style} = content
 
     return (
 
-        <h1 style={PersonalDetailsLabelStyle}>{props.content}</h1>
-    )
-}
-
-export const PersonalDetailsLocation: React.FC<PersonalDetailsProps> = (props) => {
-    const PersonalDetailsLocationStyle = {
-        backgroundColor: '#291D36',
-        color: '#FFFFFF',
-        padding: '0.5rem'
-    }
-
-    return (
-
-        <h4 style={PersonalDetailsLocationStyle}>{props.content}</h4>
+        <p className={className} style={style}>{text}</p>
     )
 }
 
