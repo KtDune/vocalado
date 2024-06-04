@@ -1,6 +1,7 @@
 import {useId} from 'react'
 import burgerBarIcon from '../../assets/menu_icon.svg'
 import {useSidebar} from '../Sidebar/SidebarHooks'
+import { Link } from 'react-router-dom'
 
 // Burgerbar icon on the top left corner
 const BurgerBar: React.FC = () => {
@@ -49,9 +50,7 @@ const ProfileButton: React.FC = () => {
                 <img src='#' alt='Google Account' />
             </button>
             <ul className="dropdown-menu" aria-labelledby={dropdownId}>
-                <li><a className="dropdown-item" href="#">Action</a></li>
-                <li><a className="dropdown-item" href="#">Another action</a></li>
-                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                <li><Link to="/user" className='dropdown-item'>Profile</Link></li>
             </ul>
         </div>
     )

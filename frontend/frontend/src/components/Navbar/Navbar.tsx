@@ -1,0 +1,32 @@
+import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
+import editIcon from '../../assets/Edit White Icon.svg'
+
+const Navbar: React.FC = () => {
+    const NavbarStyle = {
+        backgroundColor: "#00436C"
+    }
+
+    const ButtonStyle = {
+        backgroundColor: "#00436C",
+        borderRadius: "0",
+        border: "none",
+        fontWeight: '3'
+    }
+
+    return (
+        <>
+            <nav className="nav nav-tabs mt-3" style={NavbarStyle}>
+                <Link className="nav-link text-white" to="/user/all">All</Link>
+                <Link className="nav-link text-white" to="/user/popular">Popular</Link>
+                <Link className="nav-link text-white" to="/user/repost">Repost</Link>
+                <button className="btn btn-secondary navbar-item ms-auto" style={ButtonStyle}>
+                    <img src={editIcon} alt="edit" className='img-fliud me-2' style={{width: '1rem', height: '1rem'}}/>Edit
+                </button>
+            </nav>
+            <Outlet />
+        </>
+    )
+}
+
+export default Navbar
