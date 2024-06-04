@@ -1,4 +1,4 @@
-import {PersonalDetailsImage, PersonalDetailsLabel} from '../ui/PersonalDetailsComponent'
+import {PersonalDetailsImage, PersonalDetailsLabel} from '../PersonalDetails/PersonalDetailsComponent'
 
 const PersonalDetails: React.FC = () => {
     
@@ -19,23 +19,25 @@ const PersonalDetails: React.FC = () => {
 
     //Personal Details Name secion
     const TextboxNameParam = {
-        className: "h1",
-        text: "Longest name you habe ever seen",
+        className: "h1 text-break",
+        text: "Kyle",
         style: {
             backgroundColor: '#291D36',
             color: '#FFFFFF',
-            padding: '0.7rem'
+            padding: '0.7rem',
+            display: "inline-block"
         }
     }
 
     //Personal Details Location section
     const TextboxLocationParam = {
-        className: "h5",
+        className: "h5 text-break",
         text: "Chicago, Japan",
         style: {
             backgroundColor: '#291D36',
             color: '#FFFFFF',
-            padding: '0.5rem'
+            padding: '0.5rem',
+            display: "inline-block"
         }
     }
 

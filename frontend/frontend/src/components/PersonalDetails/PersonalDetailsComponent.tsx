@@ -13,7 +13,6 @@ interface TextboxProps {
     }
 }
 
-//Ignore the error on this conponent, the param is passed successfully and has no issue runing o nthe web. Vscode = shyt
 export const PersonalDetailsImage: React.FC<PersonalDetailsProps> = ({content}) => {
     const {src, alt, style} = content
 
