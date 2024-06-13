@@ -19,7 +19,7 @@ export const useSidebar = () => {
 const SidebarContextProvider: React.FC<{children: ReactNode}> = ({children}) => {
   const [sidebarState, setSidebarState] = useState(false)
   const toggleSidebarState = () => {
-    setSidebarState(() => !sidebarState)
+    setSidebarState((prev) => !prev)
   }
 
   return (

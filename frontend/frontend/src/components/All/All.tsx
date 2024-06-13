@@ -1,5 +1,10 @@
+import Track from "../Track/Track"
+
 const All: React.FC = () => {
-    return <div>All Content</div>
+    return <div>
+        
+        <Track />
+    </div>
 }
 
 export default All
