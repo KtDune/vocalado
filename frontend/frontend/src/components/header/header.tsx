@@ -50,7 +50,7 @@ const ProfileButton: React.FC = () => {
                 <img src='#' alt='Google Account' />
             </button>
             <ul className="dropdown-menu" aria-labelledby={dropdownId}>
-                <li><Link to="/user" className='dropdown-item'>Profile</Link></li>
+                <li><Link to="/user/all" className='dropdown-item'>Profile</Link></li>
             </ul>
         </div>
     )

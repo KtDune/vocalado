@@ -1,15 +1,16 @@
 interface PersonalDetailsProps {
     content: {
         src: string,
-    alt: string,
-style: {}}
+        alt: string,
+        style: React.CSSProperties
+    }
 }
 
 interface TextboxProps {
     content: {
         className: string,
         text: string,
-        style: {}
+        style: React.CSSProperties
     }
 }
 

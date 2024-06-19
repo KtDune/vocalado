@@ -14,17 +14,18 @@ const PersonalProfile: React.FC = () => {
     return (
         <div style={PersonalProfileStyle}>
         <PersonalDetails />
-        <Navbar />
-        <div className='container-fluid mt-4' style={{margin: "0 23px"}}>
-            <div className='row'>
-                <div className='col-sm-9'>
-                    <Outlet />
+        <Navbar>
+                <div className='container-fluid mt-4' style={{margin: "0 23px"}}>
+                    <div className='row'>
+                        <div className='col-sm-9'>
+                                <Outlet />
+                        </div>
+                        <div className='col-sm-3'>
+                            <UserProfileState />
+                        </div>
+                    </div>
                 </div>
-                <div className='col-sm-3'>
-                    <UserProfileState />
-                </div>
-            </div>
-        </div>
+        </Navbar>
     </div>
 
     )

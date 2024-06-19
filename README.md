@@ -21,7 +21,7 @@ The `component` folder structure are formed based on the components. Every folde
  `Popular` - The popular section of the profile page
  `Repost` - The repot section of the profile page
  `Sidebar` - Sidebar of the website
- `Track` - Plays music when button is clicked
+ `Songcard` - Show every action and information about a song
  `UserProfileState` - Show followers / following / user quote
 
  ## Pages Folder Structure

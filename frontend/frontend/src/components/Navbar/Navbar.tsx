@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import editIcon from '../../assets/Edit White Icon.svg'
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<{children : ReactNode}> = ({children}) => {
+
     const NavbarStyle = {
         backgroundColor: "#00436C",
         margin: "0 -12px"
@@ -25,6 +26,7 @@ const Navbar: React.FC = () => {
                     <img src={editIcon} alt="edit" className='img-fliud me-2' style={{width: '1rem', height: '1rem'}}/>Edit
                 </button>
             </nav>
+            {children}
         </>
     )
 }
